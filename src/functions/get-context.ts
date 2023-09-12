@@ -36,29 +36,6 @@ export async function validateInputs(): Promise<Inputs> {
       throw new Error('days-before-stale must be greater than zero')
     }
 
-    //Validate comment-updates
-    const inputCommentUpdates = core.getBooleanInput('comment-updates')
-
-    //Validate max-issues
-    const inputMaxIssues = Number(core.getInput('max-issues'))
-
-    if (inputMaxIssues.toString() === 'NaN') {
-      throw new Error('max-issues must be a number')
-    }
-
-    if (inputMaxIssues < 0) {
-      throw new Error('max-issues must be greater than zero')
-    }
-
-    //Validate tag-committer
-    const inputTagLastCommitter = core.getBooleanInput('tag-committer')
-
-    //Validate stale-branch-label
-    const inputStaleBranchLabel = String(core.getInput('stale-branch-label'))
-    if (inputStaleBranchLabel.length > 50) {
-      throw new Error('stale-branch-label must be 50 characters or less')
-    }
-
     //Validate compare-branches
     const inputCompareBranches = core.getInput('compare-branches')
     if (!(inputCompareBranches in CompareBranchesEnum)) {
@@ -74,10 +51,6 @@ export async function validateInputs(): Promise<Inputs> {
     //Assign inputs
     result.daysBeforeStale = inputDaysBeforeStale
     result.daysBeforeDelete = inputDaysBeforeDelete
-    result.commentUpdates = inputCommentUpdates
-    result.maxIssues = inputMaxIssues
-    result.tagLastCommitter = inputTagLastCommitter
-    result.staleBranchLabel = inputStaleBranchLabel
     result.compareBranches = inputCompareBranches
     result.branchesFilterRegex = branchesFilterRegex
   } catch (err: unknown) {

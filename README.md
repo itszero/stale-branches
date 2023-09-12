@@ -1,7 +1,4 @@
-<p align="center">
-  <a href="https://github.com/crs-k/stale-branches/actions"><img alt="ci status" src="https://github.com/crs-k/stale-branches/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://github.com/crs-k/stale-branches/actions"><img alt="ci status" src="https://github.com/crs-k/stale-branches/actions/workflows/codeql-analysis.yml/badge.svg"></a>
-</p>
+NOTE: This forked version does not rely on issues at all. It would go ahead and delete branches as they expire.
 
 # Stale Branches
 

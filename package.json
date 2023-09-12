@@ -1,34 +1,27 @@
 {
-  "name": "@crs-k/stale-branches",
+  "name": "@itszero/stale-branches",
   "version": "0.0.0",
   "private": true,
-  "author": "Chris Kerins",
+  "author": "Zero Cho",
   "license": "MIT",
   "description": "Finds and deletes stale branches",
   "main": "lib/main.js",
-  "homepage": "https://github.com/marketplace/actions/stale-branches",
-  "bugs": {
-    "url": "https://github.com/crs-k/stale-branches/issues"
-  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "lint": "npm run npmpackagejsonlint . && npm run eslint",
+    "lint": "npm run eslint",
     "eslint": "eslint src/**/*.ts",
-    "npmpackagejsonlint": "npmPkgJsonLint .",
     "package": "set NODE_OPTIONS=--openssl-legacy-provider && ncc build --source-map",
-    "test": "jest --coverage",
-    "all": "npm run format && npm run lint && npm test && npm run build && npm run package"
+    "all": "npm run format && npm run lint && npm run build && npm run package"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/crs-k/stale-branches.git"
+    "url": "git://github.com/itszero/stale-branches.git"
   },
   "keywords": [
     "actions"
   ],
-
   "dependencies": {
     "@actions/core": "1.10.1",
     "@actions/github": "5.1.1",
